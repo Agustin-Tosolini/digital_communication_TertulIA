@@ -1,0 +1,23 @@
+Con el fin de caracterizar el ruido presente en todo canal de comunicaciones inalámbrico se pide realizar un código en una Jupyter notebook que permita extraer las componentes en fase (parte real) y en cuadratura (parte imaginaria) de la señal recibida por el receptor del SDR cuando el mismo no se encuentra transmitiendo ningún tipo de señal. Algunas de las configuraciones necesarias para esta experiencia son:
+Uri            = "ip:192.168.1.32"            
+Loopback               = 0 
+Tx_cyclic_buffer      = False
+TxAtten                   = -70
+GainControlModes = "manual"
+RxHardwareGain     = 70
+RxBufferSize            = 2**20 
+en donde los demás parámetros sin especificar pueden ser elegidos por el usuario.
+
+Bajo estas condiciones se va a poder "escuchar" el canal con la mínima interferencia posible.
+
+Con las muestras obtenidas en las componentes en fase y cuadratura, se pide:
+
+1. Graficar la señal en tiempo y en frecuencia.
+2. Obtener la media y la varianza.
+3. Realizar un histograma (Ver página 485 del libro "Intro a los sist. de comunicación").
+4. Normalizar el histograma para que el area encerrada sea igual a 1.
+5. Superponer el histograma normalizado con una función de densidad de probabilidad (PDF) gaussiana teórica.
+6. Analizar la gaussianidad mediante un gráfico Q-Q haciendo uso de la función propia de python "qqplot".
+7. Generar mediante un código, una variable gaussiana compleja que tenga la misma media y varianza que la señal muestreada y obtener su gráfica temporal, su gráfica en frecuencia y su histograma.
+8. Escriba al final de la jupyter notebook una conclusión respecto a los resultados obtenidos en la práctica.
+9. Adjuntar la Jupyter Notebook que permitió obtener todos estos resultados.
